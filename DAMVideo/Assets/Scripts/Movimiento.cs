@@ -8,14 +8,14 @@ public class Movimiento : MonoBehaviour
     public float velocidadRotacion = 100f;       // Velocidad de rotación
     public float fuerzaSalto = 7f;               // Fuerza del salto
 
-    private Animator animator;                   // Referencia al Animator
+    //private Animator animator;                   // Referencia al Animator
     private Rigidbody rb;                        // Referencia al Rigidbody
     private bool enSuelo = true;                        // Booleano para verificar si está en el suelo
 
     private void Start()
     {
         // Obtener el componente Animator y Rigidbody del personaje
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -29,11 +29,11 @@ public class Movimiento : MonoBehaviour
         transform.Rotate(0f, rotacion * velocidadRotacion * Time.deltaTime, 0f);
 
         // Mover al personaje hacia adelante o atrás en el eje Z (dirección forward)
-        Vector3 direccionMovimiento = -1*transform.forward * movimiento * velocidadMovimiento * Time.deltaTime;
+        Vector3 direccionMovimiento = transform.forward * movimiento * velocidadMovimiento * Time.deltaTime;
         transform.position += direccionMovimiento;
 
         // Cambiar la velocidad del Animator basada en la magnitud del movimiento
-        animator.SetFloat("velocidad", Mathf.Abs(movimiento));
+        //animator.SetFloat("velocidad", Mathf.Abs(movimiento));
 
         // Saltar si está en el suelo y se presiona la tecla de espacio
         if (Input.GetKeyDown(KeyCode.Space) && enSuelo)
