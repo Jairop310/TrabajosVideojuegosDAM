@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/03_Composicion.unity
+    guid: 09014cba89236ed408029e3c32ae7089
   m_configObjects: {}
