@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class newPosition : MonoBehaviour
 {
+    MeshRenderer meshRenderer;
     [Header("Posicion inical")]
     public Vector3 posicionInicial;
 
@@ -18,12 +19,15 @@ public class newPosition : MonoBehaviour
     void Start()
     {
         // Puedes inicializar la posición aquí si lo deseas
+        meshRenderer = GetComponent<MeshRenderer>();
         posicionInicial = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         // Movimiento en el eje X
         if (Input.GetKey(KeyCode.A)) movimientoX -= velocidadMovimiento * Time.deltaTime;  // Mover a la izquierda
         if (Input.GetKey(KeyCode.D)) movimientoX += velocidadMovimiento * Time.deltaTime;  // Mover a la derecha
