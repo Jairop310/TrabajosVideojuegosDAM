@@ -7,6 +7,7 @@ TagManager:
   - Jugadores
   - Gol1
   - Gol2
+  - Block
   layers:
   - Default
   - TransparentFX
